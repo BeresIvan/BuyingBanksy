@@ -83,7 +83,7 @@ class App extends Component {
                        value={this.state.password}
                        className="form-control form-group"
                        />
-
+{/* /test/ */}
                        <input type= "submit" className= "btn btn-danger btn-block" value= "submit"/>
                    </form>
               </div>
