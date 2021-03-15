@@ -1,22 +1,11 @@
-import React,{ Component } from "react";
+import React, { useReducer, useRef } from "react";
+import {Dropdown} from 'react-bootstrap';
+import {DropdownButton} from 'react-bootstrap';
+import SearchForm from "./components/SearchForm";
+import Table from "./components/Table";
+import {allReviews} from "../../../models/reviewmodeles";
+import "./App.css";
 
-
-class Reviews extends Component {
-
-  render() {
-    return (
-    <div>
-        <h1>REVIEWS</h1>
-    </div>
-    );
-  }
-}
-
-
-
-export default Reviews;
-
-
-
-
+let reviewsEntered = allReviews;
+console.log(reviewsEntered);
 
