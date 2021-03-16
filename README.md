@@ -8,6 +8,8 @@ Brining art to the masses. Our application will allow you to shop for beautiful 
 # User Story 
 As a user I would like to browse for artwork, add the pieces I want to my cart, pay for the artwork I want, and leave a review about my experience. 
 
+Presentation: [https://drive.google.com/file/d/1eeqHNDNEWpLP8APRr1Ei7cA1elMYr5FN/view?usp=sharing]
+
 # Usage 
 
 # Credits
