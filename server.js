@@ -1,20 +1,25 @@
-require("dotenv").config();
-const express = require("express");
+import express from "express";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import cors from "cors";
+
 const app = express();
-const mongoose = require("mongoose");
-//const dotenv = require ("dotenv");
-//dotenv.config();
-const routesUrls = require("./routes");
-const cors = require("cors");
-const DB = process.env.DATABASE_ACCESS;
 
-//const PORT = process.env.PORT || 3001;
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+const CONNECTION_URL =
+  "mongodb+srv://ivanberes:ivanberes@cluster0.anijl.mongodb.net/Banksy?retryWrites=true&w=majority";
+const PORT = process.env.PORT || 4000;
+
 mongoose
-  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Database connected"));
-app.use(routesUrls);
-app.listen(4000, () => console.log("server is up and running"));
+  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>
+    app.listen(PORT, () =>
+      console.log(`Server Running on Port: http://localhost:${PORT}`)
+    )
+  )
+  .catch((error) => console.log(`${error} did not connect`));
+
+mongoose.set("useFindAndModify", false);
