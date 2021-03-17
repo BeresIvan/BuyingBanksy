@@ -32,6 +32,7 @@
     "babel-eslint": "^10.1.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.6.0",
     "chalk": "^4.1.0",
     "concurrently": "^6.0.0",
     "cors": "^2.8.5",
@@ -44,7 +45,11 @@
     "mongoose": "^5.12.0",
     "nodemon": "^2.0.7",
     "passport-google": "^0.3.0",
+<<<<<<< HEAD
     "react-router": "^5.2.0",
+=======
+    "react-bootstrap": "^1.5.2",
+>>>>>>> e8fd9e367a95f996f51d019d644c8259cb592e6f
     "sass": "^1.32.8"
   }
 }
