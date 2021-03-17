@@ -1,18 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar/index";
+import Toolbar from "./components/Navbar/index.js";
 import Wrapper from "./components/Wrapper";
 import Home from "./pages/Home.js";
 import Reviews from "./pages/Reviews.js";
 import Login from "./pages/Login.js";
+import Cart from "./pages/Cart.js";
+
 
 function App() {
   return (
     <Router>
       <div>
-        <h1>Buying Banksy</h1>
-        <Navbar />
+        <Toolbar />
         <Switch>
         <Wrapper>
           <Route exact path={["/", "/home"]}>
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path="/reviews">
             <Reviews />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
           </Route>
         </Wrapper>
         </Switch>
