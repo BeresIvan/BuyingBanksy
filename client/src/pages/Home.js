@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "../components/ProductCard";
 import Wrapper from "../components/Wrapper";
 import Products from "../products.json";
-import { Link } from "react-router-dom"; 
+
 
 function Home() {
   return(
