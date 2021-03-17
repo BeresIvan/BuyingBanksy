@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar/index";
 import Wrapper from "./components/Wrapper";
-import Home from "./pages/Home";
-import Reviews from "./pages/Reviews";
+import Home from "./pages/Home.js";
+import Reviews from "./pages/Reviews.js";
+import Login from "./pages/Login.js";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         <Wrapper>
           <Route exact path={["/", "/home"]}>
             <Home />
+          </Route>
+          <Route exaxt path="/login">
+            <Login />
           </Route>
           <Route exact path="/reviews">
             <Reviews />
