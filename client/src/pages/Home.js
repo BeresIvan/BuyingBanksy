@@ -1,7 +1,8 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
 import Wrapper from "../components/Wrapper";
-import Products from "../products.json"; 
+import Products from "../products.json";
+
 
 function Home() {
   return(
@@ -133,8 +134,6 @@ function Home() {
 
 
 export default Home;
-
-
 
 
 
