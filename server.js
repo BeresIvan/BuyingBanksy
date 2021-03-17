@@ -1,18 +1,47 @@
-require("dotenv").config();
-const express = require("express");
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import passport from "passport";
+const googleStrategy = require("passport-google-ouath20").Strategy;
+import keys from "./client/config/index";
+import chalk from "chalk";
+
+const user = {};
+
+passport.serializeUser(fn, (user, cb) => {
+  cb(null, user);
+});
+
+passport.deserializeUser(fn, (user, cb) => {
+  cb(null, user);
+});
+
 const app = express();
-const mongoose = require("mongoose");
-//const dotenv = require ("dotenv")
-//dotenv.config()
-const routesUrls = require("./routes");
-const cors = require("cors");
-const DB = process.env.DATABASE_ACCESS || "mongodb+srv://ivanberes:ivanberes@cluster0.anijl.mongodb.net/Banksy?retryWrites=true&w=majority";
-//const PORT = process.env.PORT || 3001;
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(cors());
-mongoose
-  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Database connected"));
-app.use(routesUrls);
-app.listen(4000, () => console.log("server is up and running"));
+app.use(passport.initialize());
+
+//Google strategy:
+passport.use(
+  newGoogleStartegy(
+    {
+      clientID: keys.GOOGLE.clientID,
+      clientSecret: keys.GOOGLE.ClientSecret,
+      callbackUrl: "/auth/google/callback",
+    },
+    (accessToken, refreshToken, profile, cb) => {
+      console.log(chalk.blue(JSON.stringify(profile)));
+      user = { ...profile };
+      return cb(null, profile);
+    }
+  )
+);
+
+app.get("/auth/google", passport.authenticate( strategy, "google"));
+app.get("/auth/google/callback", 
+passport.authenticate(("google"),
+    options, (req, res) => {
+      res.redirect("/profile");
+    }));
+
+const PORT = 5000;
+app.listen(PORT);
