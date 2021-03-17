@@ -1,8 +1,10 @@
-  
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.scss";
+import GoogleLogin from "react-google-login";
+import axios from "axios";
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -15,6 +17,21 @@ export default function Login() {
   function handleSubmit(event) {
     event.preventDefault();
   }
+
+  const responseSuccessGoogle = (response) => {
+      console.log(response);
+      axios({
+      method:"POST",
+      url: "http//:localhost:8000/api/googlelogin",
+      data: {tokenId: response.tokenId}
+    }).then (response => {
+        console.log(response)
+    })
+  }
+  const responseErrorGoogle = (response) => {
+
+  }
+
 
   return (
     <div className="Login">
@@ -39,6 +56,13 @@ export default function Login() {
         <Button block size="lg" type="submit" disabled={!validateForm()}>
           Login
         </Button>
+        <GoogleLogin
+          clientId="803559523817-ojv2q356hbt4hbe6si6m7bbmlmamlp2u.apps.googleusercontent.com"
+          buttonText="Google Login"
+          onSuccess={responseSuccessGoogle}
+          onFailure={responseErrorGoogle}
+          cookiePolicy={"single_host_origin"}
+        />
       </Form>
     </div>
   );
