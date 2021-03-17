@@ -36,12 +36,17 @@ passport.use(
   )
 );
 
-app.get("/auth/google", passport.authenticate( strategy, "google"));
-app.get("/auth/google/callback", 
-passport.authenticate(("google"),
+app.get("/auth/google", passport.authenticate( Strategy, "google")),
+app.get("/auth/google/callback",
+  passport.authenticate(("google"),
     options, (req, res) => {
       res.redirect("/profile");
     }));
 
-const PORT = 5000;
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT);
+
+console.log(bodyParser);
+console.log(googleStrategy);
+console.log(user);
