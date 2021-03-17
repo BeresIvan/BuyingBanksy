@@ -51,7 +51,14 @@ class App extends Component {
         email:"",
         password:""
       })
+
+  
+
+      console.log("Registration Successful");
+
+
     }
+
 
     render() {
       return (
@@ -61,7 +68,7 @@ class App extends Component {
                    <form onSubmit= { (e) =>
                     this.onSubmit(e)}>
                        <input type = "text"
-                       plceholder= "userName"
+                       placeholder= "Username"
                        onChange={ (e) =>
                        this.changeUserName(e)}
                        value={this.state.userName}
@@ -69,7 +76,7 @@ class App extends Component {
                        />
 
                        <input type = "text"
-                       plceholder= "email"
+                       placeholder= "Email"
                        onChange={ (e) =>
                         this.changeEmail(e)}
                        value={this.state.email}
@@ -77,7 +84,7 @@ class App extends Component {
                        />
 
                        <input type = "text"
-                       plceholder= "password"
+                       placeholder= "Password"
                        onChange={ (e) =>
                         this.changePassword(e)}
                        value={this.state.password}

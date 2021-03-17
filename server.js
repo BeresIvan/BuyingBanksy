@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 //dotenv.config()
 const routesUrls = require("./routes");
 const cors = require("cors");
-const DB = process.env.DATABASE_ACCESS;
+const DB = process.env.DATABASE_ACCESS || "mongodb+srv://ivanberes:ivanberes@cluster0.anijl.mongodb.net/Banksy?retryWrites=true&w=majority";
 //const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
