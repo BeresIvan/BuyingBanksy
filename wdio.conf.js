@@ -158,7 +158,7 @@ exports.config = {
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the `baseUrl`
   // gets prepended directly.
   //baseUrl: 'http://localhost:8080',
-  baseUrl: "c",
+  baseUrl: "/",
 
   //
   // Default timeout for all waitForXXX commands.

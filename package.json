@@ -14,7 +14,8 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "lint": "eslint \"./**/*.js\""
+    "lint": "eslint \"./**/*.js\"",
+    "wdio": "wdio.conf.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
+    "chromedriver": "^89.0.0",
     "concurrently": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -42,5 +44,8 @@
     "nodemon": "^2.0.7",
     "passport-google": "^0.3.0",
     "sass": "^1.32.8"
+  },
+  "devDependencies": {
+    "@wdio/cucumber-framework": "^7.2.0"
   }
 }
