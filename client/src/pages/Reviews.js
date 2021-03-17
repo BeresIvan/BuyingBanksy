@@ -5,7 +5,7 @@ import {Dropdown} from 'react-bootstrap';
 import {DropdownButton} from 'react-bootstrap';
 import Table from "./components/Table";
 import {allReviews} from "../../../models/reviewmodeles";
-import "./App.css";
+
 
 console.log(allReviews);
 
