@@ -9,6 +9,7 @@ function Toolbar() {
     <Navbar.Brand href="#home">Buying Banksy</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="home">Home</Nav.Link>
+      <Nav.Link href="gallery">Gallery</Nav.Link>
       <Nav.Link href="Reviews">Reviews</Nav.Link>
       <Nav.Link href="Cart">Cart</Nav.Link>
       <Nav.Link href="Login">Login</Nav.Link>
