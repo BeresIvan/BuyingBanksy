@@ -7,6 +7,7 @@ import Home from "./pages/Home.js";
 import Reviews from "./pages/Reviews.js";
 import Login from "./pages/Login.js";
 import Cart from "./pages/Cart.js";
+import Signup from "./pages/Signup.js";
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exaxt path="/login">
             <Login />
+          </Route>
+          <Route exaxt path="/Signup">
+            <Signup />
           </Route>
           <Route exact path="/reviews">
             <Reviews />
