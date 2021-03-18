@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "reviewTitle": "First Review",
+      "comment": "Gian Lorenzo Bernini",
+      "category": "Quality",
+      "rating": "5",
+      "date": "3/18/2021"
+
+    },
+
+    {
+        "id": 2,
+        "reviewTitle": "Second Review",
+        "comment": "Gian Lorenzo Bernini",
+        "category": "Sculpture",
+        "rating": "5",
+        "date": "3/18/2021"
+  
+      },
+
+      {
+        "id": 3,
+        "reviewTitle": "Third Review",
+        "comment": "Gian Lorenzo Bernini",
+        "category": "Sculpture",
+        "rating": "3",
+        "date": "3/18/2021"
+  
+      }
+    ]
