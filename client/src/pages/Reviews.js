@@ -1,17 +1,51 @@
-import React, {useState} from "react";
-import {Button, Dropdown, DropdownButton, Modal} from 'react-bootstrap';
-import Table from "../components/Table";
-import reviews from "../reviews.json"
+ import React, { useState} from "react";
+import {Button, Modal} from 'react-bootstrap';
+//import Table from "../components/Table";
+import API from "../utils/API.js";
+import ReviewCard from "../components/ReviewCard";
+import {allReviews} from "../reviews.json";
 import "./reviews.css";
-
 
  function Reviews() {
   const [show, setShow] = useState(false);
+  const [formObject, setFormObject] = useState({});
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  //const inputRef = useRef();
+
+  // useEffect(() => {
+  //   loadReviews()
+  // }, [])
+
+  // function loadReviews() {
+  //   API.getBooks()
+  //     .then(res => 
+  //       setBooks(res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // };
+
+
+  function handleSubmit(event) {
+    
+    event.preventDefault();
+    if (formObject.comment) {
+      API.saveReview({
+       comment: formObject.comment
+      })
+        //.then(res => loadReviews())
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    }
+  };
+
+  function handleInputChange(event) {
+    const {name, value } = event.target;
+    setFormObject({...formObject, [name]: value})
+  };
 
   return (
-   <div>
+   <div class="reviewBody">
      <>
       <Button variant="primary" onClick={handleShow}>
         Add Review
@@ -47,25 +81,21 @@ import "./reviews.css";
         </Modal.Header>
         <Modal.Body>
         
-     <input
-          className="form-control"
-          //ref={inputRef}
-          placeholder="Review Title"
-        />
-        <div class="comment-area"> <textarea class="form-control" placeholder="How was your experience with Buying Banksy?" rows="4"></textarea> </div>
+   
+        <div class="comment-area"> <textarea onChange={handleInputChange} name= "comment" value={formObject.comment} class="form-control" placeholder="How was your experience with Buying Banksy?" rows="4"></textarea> </div>
 
  
           
           
           </Modal.Body>
-        <Modal.Footer>
+          <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
 
 
         
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>
@@ -76,31 +106,35 @@ import "./reviews.css";
 
 
 
-     <DropdownButton id="dropdown-basic-button" title="Sort Reviews">
+     {/* <DropdownButton id="dropdown-basic-button" title="Sort Reviews">
           <Dropdown.Item href="#/action-1">Ratings 5-1</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Ratings 1-5</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Date</Dropdown.Item>
-        </DropdownButton>
+        </DropdownButton> */}
+
+    <ReviewCard
+    comment={allReviews[0].comment}
+    rating={allReviews[0].ratingValue}
+    date={allReviews[0].date}>
+    </ReviewCard>
+
+    <ReviewCard
+    comment={allReviews[1].comment}
+    rating={allReviews[1].ratingValue}
+    date={allReviews[1].date}>
+    </ReviewCard>
+
+    <ReviewCard
+    comment={allReviews[2].comment}
+    rating={allReviews[2].ratingValue}
+    date={allReviews[2].date}>
+    </ReviewCard>
 
 
 
-
-
-
-
-
-     
-        
-        <Table
-        title={reviews[0].reviewTitle}
-        comment={reviews[0].commment}
-        category={reviews[0].category}
-        rating={reviews[0].rating}
-        date={reviews[0].date}
-        
-        />
-
-           
+    {/* <Table allReviews ={allReviews} >
+    </Table> */}
+    
    </div>
   );
 }
