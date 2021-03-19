@@ -22,11 +22,3 @@ class Home extends Component {
 }
 
 export default Home;
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> bc049fc137680481668b0540a7471689d29576b3
