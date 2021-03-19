@@ -23,7 +23,7 @@ class Cart extends Component {
                     
                       <tr>
                         <td>Product1</td>
-                        <td>$1000.00</td>
+                        <td>$1000.0</td>
                         <td>
                           <button
                             // onClick={(e) => increaseQty(item.productId._id)}
