@@ -2,14 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
+const userRoutes = require("./routes/userRouter");
 
 //set up express
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`server started on ${PORT}`));
+//set up routes for user
+app.use(userRoutes);
 
 //set up mongoose
 mongoose.connect(
@@ -27,5 +28,7 @@ mongoose.connect(
   }
 );
 
-//set up routes for user
-app.use("/users", require("../routes/userRouter"));
+
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log(`server started on ${PORT}`));
