@@ -8,3 +8,8 @@ html, body, #root {
   margin: 0;
   height: 100%;
 }
+
+::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
