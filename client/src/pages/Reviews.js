@@ -102,10 +102,6 @@ import "./reviews.css";
       </Modal>
     </>
  
-   
-
-
-
      {/* <DropdownButton id="dropdown-basic-button" title="Sort Reviews">
           <Dropdown.Item href="#/action-1">Ratings 5-1</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Ratings 1-5</Dropdown.Item>
