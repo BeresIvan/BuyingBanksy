@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const bcrypt = require ("bcryptjs");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("./models/usermodel");
 
@@ -19,7 +19,7 @@ router.post("/register", async (req, res) => {
     }
     if (!displayName) {
       displayName = email;
-}
+    }
     const existingUser = await User.findOne({ email: email });
     if (existingUser) {
       return (400).json({ msg: "Email is used by another user" });
@@ -27,48 +27,44 @@ router.post("/register", async (req, res) => {
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
 
-    const newUser = newUser({
+    const newUser = new User({
       email,
       password: passwordHash,
-      displayName
+      displayName,
     });
     const savedUser = await newUser.save();
     res.json(savedUser);
   } catch (err) {
-    res, status(500).json({error: err.message});
+    res, status(500).json({ error: err.message });
   }
 });
 
-router.post("/login", async(req,res) => {
-  try{
-    const {email, password} =req.body;
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
 
-    //validate
-    if (!email || !password || !passwordCheck) {
-      return res.status(400).json({ msg: "not all fields have been enetered" });
-    }
-    const user = await User.findOne({ email: email });
-    if (!user) {
-      return res.status(400).json({ msg: "user not found" });
-    }
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({msg: "Invalid password"});
-    }
-
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
-    res.json({
-      token,
-      user: {
-        id: user._id,
-        displayName: user,
-        email: user.email,
-      },
-    }),   
-  } catch (err) {
-    res, status(500).json({error: err.message});
+  //validate
+  if (!email || !password || !passwordCheck) {
+    return res.status(400).json({ msg: "not all fields have been enetered" });
   }
+  const user = await User.findOne({ email: email });
+  if (!user) {
+    return res.status(400).json({ msg: "user not found" });
+  }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    return res.status(400).json({ msg: "Invalid password" });
+  }
+
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+  res.json({
+    token,
+    user: {
+      id: user._id,
+      displayName: user,
+      email: user.email,
+    },
+  });
 });
 
 module.export = router;
