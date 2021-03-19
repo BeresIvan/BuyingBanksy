@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/gallery">
             <Gallery />
           </Route>
-          <Route exaxt path="/login">
+          <Route exact path="/login">
             <Login />
           </Route>
           <Route exact path="/reviews">
