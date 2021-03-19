@@ -7,7 +7,11 @@ import Home from "./pages/Home.js";
 import Reviews from "./pages/Reviews.js";
 import Login from "./pages/Login.js";
 import Cart from "./pages/Cart.js";
+<<<<<<< HEAD
 import Signup from "./pages/Signup.js";
+=======
+import Gallery from "./pages/Gallery.js";
+>>>>>>> bc049fc137680481668b0540a7471689d29576b3
 
 
 function App() {
@@ -20,7 +24,10 @@ function App() {
           <Route exact path={["/", "/home"]}>
             <Home />
           </Route>
-          <Route exaxt path="/login">
+          <Route exact path="/gallery">
+            <Gallery />
+          </Route>
+          <Route exact path="/login">
             <Login />
           </Route>
           <Route exaxt path="/Signup">

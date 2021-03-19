@@ -1,4 +1,5 @@
 .wrapper {
+<<<<<<< HEAD
   padding-top: 50px;
   background: #ECEFF1;
   height: 100%;
@@ -9,3 +10,15 @@
   align-content: flex-start;
   overflow: auto;
 }
+=======
+    padding-top: 50px;
+    background: #ECEFF1;
+    height: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow: auto;
+  }
+>>>>>>> bc049fc137680481668b0540a7471689d29576b3

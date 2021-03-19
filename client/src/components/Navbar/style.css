@@ -12,19 +12,19 @@
 
 /** NAVIGATION BAR */
 nav {
-  overflow: hidden;
+  overflow: auto;
   background-color: #1828e7;
   position: fixed;
   top: 0;
   width: 100%;
-a {
-  color: black;
+/* a {
+  color: red;
   text-decoration: none;
   padding: 14px;
   &:hover {
   background-color: white;
         }
-  }
+  } */
     }
 
 
