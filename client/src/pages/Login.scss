@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Dancing Script");
 @media all and (min-width: 480px) {
     .Login {
       padding: 60px 0;
@@ -7,4 +8,12 @@
       margin: 0 auto;
       max-width: 320px;
     }
+  }
+  
+  .btn-primary {
+    color: rgb(255, 247, 4);
+    background-color: rgb(182, 18, 182);
+    font-family: 'Dancing Script' 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 21px;
+    border-style: hidden;
   }
