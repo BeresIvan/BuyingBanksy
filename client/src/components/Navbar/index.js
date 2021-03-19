@@ -1,22 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./style.scss";
+import "./style.css";
+import {Navbar, Nav} from 'react-bootstrap';
+import Logo from "./BuyingBanksy.png"
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function Navbar() {
+function Toolbar() {
   return (
-    <div id="navigation-bar">
-    <nav>
-      <ul>
-      <li> <Link className="navbar-brand" to="/">Banksy </Link></li>
-      {/* <li><Link to="/" className={ window.location.pathname === "/" || window.location.pathname === "/home" ? "nav-link active" : "nav-link" }> Home </Link></li>
-      <li><Link to="/" className={ window.location.pathname === "/" || window.location.pathname === "/login" ? "nav-link active" : "nav-link" }> Login </Link></li>
-      <li><Link to="/reviews" className={ window.location.pathname === "/reviews" || window.location.pathname === "/reviews" ? "nav-link active" : "nav-link" }> Reviews </Link></li>
-      <li className="cart"><Link  to="/cart" className={ window.location.pathname === "/cart" || window.location.pathname === "/cart" ? "nav-link active" : "nav-link" }><i className="fa fa-shopping-basket" aria-hidden="true"/> Cart: $0.00</Link></li> */}
-      </ul>
-    </nav>
-  </div>
+  <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="#home"><img src={Logo} alt="Buying Banksy"/></Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="home">Home</Nav.Link>
+      <Nav.Link href="gallery">Gallery</Nav.Link>
+      <Nav.Link href="Reviews">Reviews</Nav.Link>
+      <Nav.Link href="Cart">Cart</Nav.Link>
+      <Nav.Link href="Login">Login</Nav.Link>
+    </Nav>
+  </Navbar>
   );
 }
 
-export default Navbar;
+export default Toolbar;
