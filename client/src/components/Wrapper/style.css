@@ -1,7 +1,7 @@
 .wrapper {
     padding-top: 50px;
-    /* background: rgba(255, 255, 255, 0.5); */
-    height: 100%;
+    background: #e9e9e931;
+    height: 90%;
     display: flex;
     flex-flow: row wrap;
     padding: 20px;

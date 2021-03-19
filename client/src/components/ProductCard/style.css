@@ -6,17 +6,17 @@
     position: relative;
     width: 325px;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-    text-align: left;
+    text-align: center;
   }
   
   .card > .img-container {
     height: 60%;
-    overflow: hidden;
+    overflow: auto;
     text-align: center;
-    background:#6CADDC;
+    background:#a46cdc;
   }
-  .card > .img-container> img {
-    width: 60%
+  .card > .img-container > img {
+    width: 70%
   }
   
   .card > .content {
@@ -30,7 +30,7 @@
   }
   
   .card > .content > ul > li {
-    margin-top: 18px;
+    margin-top: auto;
   }
   
  
