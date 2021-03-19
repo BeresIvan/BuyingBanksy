@@ -7,6 +7,7 @@ import Home from "./pages/Home.js";
 import Reviews from "./pages/Reviews.js";
 import Login from "./pages/Login.js";
 import Cart from "./pages/Cart.js";
+import Signup from "./pages/Signup.js";
 import Gallery from "./pages/Gallery.js";
 
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/Signup">
+            <Signup />
           </Route>
           <Route exact path="/reviews">
             <Reviews />
