@@ -16,16 +16,15 @@ nav {
   background-color: #1828e7;
   position: fixed;
   top: 0;
-  width: 100%;
-a {
+  width: 100%;}
+
+body {
   color: black;
   text-decoration: none;
   padding: 14px;
-  &:hover {
   background-color: white;
-        }
   }
-    }
+  
 
 
 
