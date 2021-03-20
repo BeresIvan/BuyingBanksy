@@ -1,8 +1,19 @@
 import React,{ Component } from "react";
 
+
 class Cart extends Component {
 
+ 
   render() {
+
+    function handleShow(){
+      const [show, setShow] = useState(false);
+      const [formObject, setFormObject] = useState({});
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
+     }
+
+
     return (
       <main>
       <section>
@@ -19,6 +30,7 @@ class Cart extends Component {
                       <th className="b-0">Name</th>
                       <th className="b-0">Price</th>
                       <th className="b-0">Quantity</th>
+                      <th className="b-0"></th>
                     </tr>
                     
                       <tr>
@@ -34,9 +46,6 @@ class Cart extends Component {
                           1
                           <button className="btn btn-primary btn-sm">-</button>
                         </td>
-                        {/* <td className="text-right">
-                          <h5 className="font-medium m-b-30">$10000</h5>
-                        </td> */}
                       </tr>
                   
                     <tr>
@@ -46,7 +55,7 @@ class Cart extends Component {
                       <td colspan="4" align="right">
                         <button
                           className="btn btn-primary"
-                          // onClick={(e) => pay()}
+                          onClick={handleShow}
                         >
                           Pay
                         </button>
@@ -58,8 +67,23 @@ class Cart extends Component {
             </div>
           </div>
         </div>
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
       </section>
     </main>
+    
     );
   }
 }
