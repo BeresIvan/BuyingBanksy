@@ -7,7 +7,7 @@ import Logo from "./BuyingBanksy.png"
 function Toolbar() {
   return (
   <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home"><img src={Logo} alt="Buying Banksy"/></Navbar.Brand>
+    <Navbar.Brand href="home"><img src={Logo} alt="Buying Banksy"/></Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="home">Home</Nav.Link>
       <Nav.Link href="gallery">Gallery</Nav.Link>
