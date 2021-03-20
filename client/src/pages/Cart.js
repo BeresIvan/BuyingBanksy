@@ -1,8 +1,11 @@
 import React,{ Component } from "react";
 
+
 class Cart extends Component {
 
+ 
   render() {
+
     return (
       <main>
       <section>
@@ -19,6 +22,7 @@ class Cart extends Component {
                       <th className="b-0">Name</th>
                       <th className="b-0">Price</th>
                       <th className="b-0">Quantity</th>
+                      <th className="b-0"></th>
                     </tr>
                     
                       <tr>
@@ -34,9 +38,6 @@ class Cart extends Component {
                           1
                           <button className="btn btn-primary btn-sm">-</button>
                         </td>
-                        {/* <td className="text-right">
-                          <h5 className="font-medium m-b-30">$10000</h5>
-                        </td> */}
                       </tr>
                   
                     <tr>
@@ -44,17 +45,13 @@ class Cart extends Component {
                         Subtotal : $1000.00
                       </td>
                       <td colspan="4" align="right">
+                      <a href="/payment">
                         <button
                           className="btn btn-primary"
-                          // onClick={(e) => pay()}
-                        >
+                           >
                           Pay
-                          {/* <Link
-              to="/payment"
-              className={
-                window.location.pathname === "/" || window.location.pathname === "/payment"}
-            >payment</Link> */}
                         </button>
+                        </a>
                       </td>
                     </tr>
                   </table>
@@ -65,6 +62,7 @@ class Cart extends Component {
         </div>
       </section>
     </main>
+    
     );
   }
 }

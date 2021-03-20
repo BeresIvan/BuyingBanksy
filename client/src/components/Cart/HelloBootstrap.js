@@ -5,9 +5,6 @@ function Cart() {
     <div>
       <h1>Banksy Shopping Cart</h1>
     </div>
-    
-   
-   
   );
 }
 
