@@ -6,13 +6,7 @@ class Cart extends Component {
  
   render() {
 
-    function handleShow(){
-      const [show, setShow] = useState(false);
-      const [formObject, setFormObject] = useState({});
-      const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);
-     }
-
+ 
 
     return (
       <main>
@@ -54,15 +48,10 @@ class Cart extends Component {
                       </td>
                       <td colspan="4" align="right">
                         <button
-                          className="btn btn-primary"
-                          onClick={handleShow}
+                          className="btn btn-primary || "
+                          // onClick={PaymentView}
                         >
                           Pay
-                          {/* <Link
-              to="/payment"
-              className={
-                window.location.pathname === "/" || window.location.pathname === "/payment"}
-            >payment</Link> */}
                         </button>
                       </td>
                     </tr>
@@ -72,20 +61,6 @@ class Cart extends Component {
             </div>
           </div>
         </div>
-        <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
       </section>
     </main>
     
