@@ -24,10 +24,13 @@ import "./reviews.css";
   //     )
   //     .catch(err => console.log(err));
   // };
-
+  
+  function handleInputChange(event) {
+    const {name, value } = event.target;
+    setFormObject({...formObject, [name]: value})
+  };
 
   function handleSubmit(event) {
-    
     event.preventDefault();
     if (formObject.comment) {
       API.saveReview({
@@ -39,10 +42,7 @@ import "./reviews.css";
     }
   };
 
-  function handleInputChange(event) {
-    const {name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
-  };
+
 
   return (
    <div class="reviewBody">
@@ -56,28 +56,15 @@ import "./reviews.css";
           <Modal.Title>Rating{" "}  
           <input type= "radio" value= "5">
             </input>
-          
             <input type= "radio" value= "4">
             </input>
-
             <input type= "radio" value= "3">
             </input>
-          
             <input type= "radio" value= "2">
             </input>
-
             <input type= "radio" value= "1">
             </input>
-
-            {/* <DropdownButton id="dropdown-basic-button" title="Category">
-          <Dropdown.Item href="#/action-1">Website</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Quality</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Shipping</Dropdown.Item>
-          <Dropdown.Item href="#/action-4">Other</Dropdown.Item>
-        </DropdownButton> */}
-
-          </Modal.Title>        
-                  
+          </Modal.Title>                 
         </Modal.Header>
         <Modal.Body>
         
@@ -95,19 +82,12 @@ import "./reviews.css";
 
 
         
-          <Button variant="primary" onClick={handleSubmit}>
+          <Button variant="primary"  disabled={!(formObject.comment)} onClick={handleSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
     </>
- 
-     {/* <DropdownButton id="dropdown-basic-button" title="Sort Reviews">
-          <Dropdown.Item href="#/action-1">Ratings 5-1</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Ratings 1-5</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Date</Dropdown.Item>
-        </DropdownButton> */}
-
     <ReviewCard
     comment={allReviews[0].comment}
     rating={allReviews[0].ratingValue}
