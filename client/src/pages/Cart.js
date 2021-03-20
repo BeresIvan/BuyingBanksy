@@ -58,6 +58,11 @@ class Cart extends Component {
                           onClick={handleShow}
                         >
                           Pay
+                          {/* <Link
+              to="/payment"
+              className={
+                window.location.pathname === "/" || window.location.pathname === "/payment"}
+            >payment</Link> */}
                         </button>
                       </td>
                     </tr>
