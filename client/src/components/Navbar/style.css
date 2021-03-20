@@ -4,8 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
 #container {
-  width: 100%;
-  display: inline-block;
+  width: 50%;
 }
 
 /** HEADER */
