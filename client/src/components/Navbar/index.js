@@ -13,7 +13,7 @@ function Toolbar() {
       <Nav.Link href="gallery">Gallery</Nav.Link>
       <Nav.Link href="Reviews">Reviews</Nav.Link>
       <Nav.Link href="Cart">Cart</Nav.Link>
-      <Nav.Link href="Payment">Payment</Nav.Link>
+      {/* <Nav.Link href="Payment">Payment</Nav.Link> */}
       <Nav.Link href="Login">Login</Nav.Link>
       <Nav.Link href="Signup">Signup</Nav.Link>
     </Nav>

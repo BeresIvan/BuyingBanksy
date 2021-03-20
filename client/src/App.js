@@ -37,9 +37,9 @@ function App() {
           <Route exact path="/cart">
             <Cart />
           </Route>
-          <Route exact path="/payment">
+          {/* <Route exact path="/payment">
             <Payment />
-          </Route>
+          </Route> */}
         </Wrapper>
         </Switch>
       </div>
