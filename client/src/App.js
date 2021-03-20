@@ -9,7 +9,8 @@ import Login from "./pages/Login.js";
 import Cart from "./pages/Cart.js";
 import Signup from "./pages/Signup.js";
 import Gallery from "./pages/Gallery.js";
-
+import Payment from "./pages/Payment";
+import paymentpage from "./components/Payment/index.js"
 
 function App() {
   return (
@@ -35,6 +36,11 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <Cart />
+          </Route>
+          <Route exact path="/payment">
+            <Payment>
+              <paymentpage ></paymentpage>
+              </Payment>
           </Route>
         </Wrapper>
         </Switch>
