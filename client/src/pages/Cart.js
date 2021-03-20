@@ -1,4 +1,5 @@
 import React,{ Component } from "react";
+import { Link } from "react-router-dom";
 
 class Cart extends Component {
 
@@ -49,6 +50,11 @@ class Cart extends Component {
                           // onClick={(e) => pay()}
                         >
                           Pay
+                          <Link
+              to="/payment"
+              className={
+                window.location.pathname === "/cart" || window.location.pathname === "/payment"}
+            >pay</Link>
                         </button>
                       </td>
                     </tr>

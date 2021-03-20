@@ -9,6 +9,7 @@ import Login from "./pages/Login.js";
 import Cart from "./pages/Cart.js";
 import Signup from "./pages/Signup.js";
 import Gallery from "./pages/Gallery.js";
+import Payment from "./pages/Payment.js";
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <Cart />
+          </Route>
+          <Route exact path="/payment">
+            <Payment />
           </Route>
         </Wrapper>
         </Switch>
