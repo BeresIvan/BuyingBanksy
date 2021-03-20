@@ -49,6 +49,11 @@ class Cart extends Component {
                           // onClick={(e) => pay()}
                         >
                           Pay
+                          {/* <Link
+              to="/payment"
+              className={
+                window.location.pathname === "/" || window.location.pathname === "/payment"}
+            >payment</Link> */}
                         </button>
                       </td>
                     </tr>
