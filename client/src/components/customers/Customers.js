@@ -7,10 +7,10 @@ function Customers() {
   const [customers, setCustomers] = useState([]);
 
   async function getCustomers() {
-    const customersRes = await axios.get("http://localhost:3000/customer/");
-    // const customersRes = await axios.get(
-    //   "https://buying-banksy.herokuapp.com/customer/"
-    // );
+    //const customersRes = await axios.get("http://localhost:3000/customer/");
+     const customersRes = await axios.get(
+       "https://buying-banksy.herokuapp.com/customer/"
+     );
     setCustomers(customersRes.data);
   }
 
