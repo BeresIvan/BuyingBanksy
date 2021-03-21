@@ -1,19 +1,20 @@
 import {Card} from "react-bootstrap";
- 
-function ReviewCard(props){
+import "./reviewCards.css";
+
+function ReviewCard({children}){
   return (
-<Card style={{width:"100%", height: "auto"}}>
- <Card.Header>Rating:{props.rating}</Card.Header>
- <Card.Body>
+<Card id="reviewCard" style={{margin:"4%", width:"90%", height: "auto"}}>
+ {/* <Card.Header>Rating:{review.date}</Card.Header> */}
+ <Card.Body id="cardBody">
    <blockquote className="blockquote mb-0">
      <p>
        {' '}
-       </p>{props.comment}
-     <footer className="blockquote-footer">
-     </footer>{props.date}
+       </p>{children}
    </blockquote>
  </Card.Body>
 </Card>
   )
 }
 export default ReviewCard;
+
+//style={{width:"90%", height: "auto", padding: "20px"}}
