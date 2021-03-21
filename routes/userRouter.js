@@ -1,14 +1,16 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../models/usermodel");
+const User = require("../models/userModel");
 
 //signup user
+
 router.post("/", async (req, res) => {
   try {
     const { email, password, passwordVerify } = req.body;
 
-    //validate
+    //validation
+
     if (!email || !password || !passwordVerify) {
       return res
         .status(400)
@@ -20,13 +22,15 @@ router.post("/", async (req, res) => {
     if (password !== passwordVerify) {
       return res.status(400).json({ errorMessage: "passwords have to match" });
     }
-    const existingUser = await User.findOne({ email: email });
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
       return (400).json({ errorMessage: "Email is used by another user" });
     }
     //Hash the password
+
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
+
     //save new user
     const newUser = new User({
       email,
@@ -34,7 +38,7 @@ router.post("/", async (req, res) => {
     });
     const savedUser = await newUser.save();
 
-    // sign yhe token for log in
+    // sign the token for log in
     const token = jwt.sign(
       {
         user: savedUser._id,
@@ -46,6 +50,8 @@ router.post("/", async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
+        secure: true,
+        sameSite: "none",
       })
       .send();
   } catch (err) {
@@ -85,6 +91,8 @@ router.post("/login", async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
+        secure: true,
+        sameSite: "none",
       })
       .send();
   } catch (err) {
@@ -97,8 +105,25 @@ router.get("/logout", (req, res) => {
     .cookie("token", "", {
       httpOnly: true,
       expires: new Date(0),
+      secure: true,
+      sameSite: "none",
     })
     .send();
+});
+
+router.get("/loggedIn", (req, res) => {
+  try {
+    const token = req.cookies.token;
+    if (!token) {
+      return res.json(false);
+    }
+
+    jwt.verify(token, process.env.JWT_SECRET);
+
+    res.send(true);
+  } catch (err) {
+    res.json(false);
+  }
 });
 
 module.exports = router;

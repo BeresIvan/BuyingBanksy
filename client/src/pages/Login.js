@@ -1,44 +1,58 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
+
 import Button from "react-bootstrap/Button";
 import "./Login.scss";
+import axios from "axios";
+import React, { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
-export default function Login() {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
+  const { getLoggedIn } = useContext(AuthContext);
+  const history = useHistory();
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  async function login(e) {
+    e.preventDefault();
+
+    try {
+      const loginData = {
+        email,
+        password,
+      };
+
+      await axios.post("http://localhost:3000/login", loginData);
+      // await axios.post(
+        // "https://https://buying-banksy.herokuapp.com/Login",
+        // loginData
+      // );
+      await getLoggedIn();
+      history.push("/");
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button>
-      </Form>
+    <div>
+      <form onSubmit={login}>
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+        <Button type="submit">Log in</Button>
+      </form>
     </div>
   );
 }
+
+export default Login;
