@@ -9,10 +9,10 @@ function LogOutBtn() {
   const history = useHistory();
 
   async function logOut() {
-    await axios.get("http://localhost:3000/logout");
-    // await axios.get(
-      // "https://buying-banksy.herokuapp.com//logout"
-    // );
+    //await axios.get("http://localhost:3000/logout");
+     await axios.get(
+       "https://buying-banksy.herokuapp.com//logout"
+     );
     await getLoggedIn();
     history.push("/Home");
   }
