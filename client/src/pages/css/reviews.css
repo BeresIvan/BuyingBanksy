@@ -4,7 +4,6 @@
 
 .list-overflow-container{
     width:100%;
-    background-image:url(../components/ReviewCard/art1.jpg);
+    /* background-image:url(../components/ReviewCard/art1.jpg); */
     background-size: 350px;
 }
-
