@@ -4,8 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
 #container {
-  width: 100%;
-  display: inline-block;
+  width: 50%;
 }
 
 /** HEADER */
@@ -13,7 +12,7 @@
 /** NAVIGATION BAR */
 nav {
   overflow: auto;
-  background-color: #1828e7;
+  background-color: #7851a9;
   position: fixed;
   top: 0;
   width: 100%;
@@ -25,6 +24,10 @@ nav {
         }
   } */
     }
+
+#link {
+  color: silver;
+}
 
 
 
