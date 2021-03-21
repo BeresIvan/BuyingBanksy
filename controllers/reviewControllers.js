@@ -2,10 +2,13 @@ const db = require("../models");
 
 // Defining methods for the ReviewsController
 module.exports = {
-  FindAll: function (req, res) {
+
+  findAll: function(req, res) {
+    console.log("find function", req.query);
     db.Review
       .find(req.query)
-      .sort({dat:-1})
+      .sort({ date: -1 })
+
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
