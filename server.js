@@ -12,6 +12,14 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
+
+const corsOptions = { origin: [
+  "https://buyingbanksy.herokuapp.com/",
+  "http://localhost:3000",
+  "http://localhost/8000/auth/github/callback", ],
+methods: ["GET", "PUT", "POST"],
+optionsSuccessStatus: 200,};
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
@@ -36,6 +44,6 @@ mongoose.connect(
     console.log("mongo db connection establishid");
   }
 );
-
+app.use(cors(corsOptions));
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`server started on ${PORT}`));
