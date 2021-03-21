@@ -1,29 +1,29 @@
- import React, { useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Button, Modal} from 'react-bootstrap';
-//import Table from "../components/Table";
 import API from "../utils/API.js";
 import ReviewCard from "../components/ReviewCard";
-import {allReviews} from "../reviews.json";
 import "./reviews.css";
+import { List } from "../components/List";
 
  function Reviews() {
   const [show, setShow] = useState(false);
   const [formObject, setFormObject] = useState({});
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [reviews, setReviews] =useState([])
   //const inputRef = useRef();
 
-  // useEffect(() => {
-  //   loadReviews()
-  // }, [])
+  useEffect(() => {
+    loadReviews()
+  }, [])
 
-  // function loadReviews() {
-  //   API.getBooks()
-  //     .then(res => 
-  //       setBooks(res.data)
-  //     )
-  //     .catch(err => console.log(err));
-  // };
+  function loadReviews() {
+     API.getReviews()
+      .then(res => 
+        setReviews(res.data)
+      )
+      .catch(err => console.log(err));
+  };
   
   function handleInputChange(event) {
     const {name, value } = event.target;
@@ -32,11 +32,13 @@ import "./reviews.css";
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (formObject.comment) {
+    if (formObject.comment && formObject.rating && formObject.user) {
       API.saveReview({
-       comment: formObject.comment
+       comment: formObject.comment,
+       rating:formObject.rating,
+       user:formObject.user
       })
-        //.then(res => loadReviews())
+        .then(res => loadReviews())
         .then(res => console.log(res))
         .catch(err => console.log(err));
     }
@@ -53,63 +55,69 @@ import "./reviews.css";
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Rating{" "}  
-          <input type= "radio" value= "5">
-            </input>
-            <input type= "radio" value= "4">
-            </input>
-            <input type= "radio" value= "3">
-            </input>
-            <input type= "radio" value= "2">
-            </input>
-            <input type= "radio" value= "1">
-            </input>
+          <Modal.Title>{" "}
+          <textarea 
+          onChange={handleInputChange} 
+          name= "rating" value={formObject.rating} 
+          class="form-control" 
+          placeholder="Rate from 1-5" 
+          rows="1">
+          </textarea>
+
+
+       
           </Modal.Title>                 
         </Modal.Header>
         <Modal.Body>
         
-   
-        <div class="comment-area"> <textarea onChange={handleInputChange} name= "comment" value={formObject.comment} class="form-control" placeholder="How was your experience with Buying Banksy?" rows="4"></textarea> </div>
-
- 
+         <div class="comment-area">
+          <textarea onChange={handleInputChange}
+          name= "comment"
+          value={formObject.comment}
+          class="form-control" 
+          placeholder="How was your experience with Buying Banksy?"
+          rows="4">
+          </textarea>
           
-          
+          <textarea id="userBox"
+          onChange={handleInputChange}
+          name= "user"
+          value={formObject.user}
+          class="form-control" 
+          placeholder="username optional"
+          rows="1">
+          </textarea>
+        </div>
           </Modal.Body>
           <Modal.Footer>
+                    
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
 
-
-        
-          <Button variant="primary"  disabled={!(formObject.comment)} onClick={handleSubmit}>
+          <Button variant="primary"  disabled={!(formObject.comment && formObject.rating && formObject.user)} onClick={handleSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
     </>
-    <ReviewCard
-    comment={allReviews[0].comment}
-    rating={allReviews[0].ratingValue}
-    date={allReviews[0].date}>
-    </ReviewCard>
 
-    <ReviewCard
-    comment={allReviews[1].comment}
-    rating={allReviews[1].ratingValue}
-    date={allReviews[1].date}>
-    </ReviewCard>
+    <List>
+   {reviews.map(review => (
+   <ReviewCard key={review._id}>
+     <h2>Rating:{review.rating}</h2>
+     <strong>
+    {review.comment}
+   </strong>
+   <p>{review.user}</p>
 
-    <ReviewCard
-    comment={allReviews[2].comment}
-    rating={allReviews[2].ratingValue}
-    date={allReviews[2].date}>
-    </ReviewCard>
+   </ReviewCard>
+    ))}
+     </List>
 
 
+     
 
-    {/* <Table allReviews ={allReviews} >
-    </Table> */}
     
    </div>
   );
