@@ -4,6 +4,9 @@ import API from "../utils/API.js";
 import ReviewCard from "../components/ReviewCard";
 import "./reviews.css";
 import { List } from "../components/List";
+import Carousel from 'react-bootstrap/Carousel';
+import Products from "../products.json";
+
 
  function Reviews() {
   const [show, setShow] = useState(false);
@@ -48,10 +51,53 @@ import { List } from "../components/List";
 
   return (
    <div class="reviewBody">
+    
      <>
       <Button variant="primary" onClick={handleShow}>
         Add Review
       </Button>
+
+  <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={Products[3].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>Love my new artwork!</h3>
+      <p>Review submitted by Jackie G</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={Products[4].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>Bought this wonderful piece. It now is in my living room. This site is great and the service too! </h3>
+      <p>Review submitted by Ivan B</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={Products[8].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>Tell all your friends that BuyingBanksy is the best art shop.</h3>
+      <p>Review submitted by Brian</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  
+
+  
+</Carousel>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
