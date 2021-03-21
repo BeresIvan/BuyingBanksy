@@ -2,10 +2,10 @@ import React, {useEffect, useState} from "react";
 import {Button, Modal} from 'react-bootstrap';
 import API from "../utils/API.js";
 import ReviewCard from "../components/ReviewCard";
-import "./reviews.css";
+import "../pages/css/reviews.css";
 import { List } from "../components/List";
-import Carousel from 'react-bootstrap/Carousel';
-import Products from "../products.json";
+// import Carousel from 'react-bootstrap/Carousel';
+// import Products from "../products.json";
 
 
  function Reviews() {
@@ -53,11 +53,14 @@ import Products from "../products.json";
    <div class="reviewBody">
     
      <>
+     <section>
+      <h1 className="title text-center">Leave us a Review</h1>
+      </section>
       <Button variant="primary" onClick={handleShow}>
         Add Review
       </Button>
 
-  <Carousel>
+  {/* <Carousel>
   <Carousel.Item>
     <img
       className="d-block w-100"
@@ -92,12 +95,8 @@ import Products from "../products.json";
       <h3>Tell all your friends that BuyingBanksy is the best art shop.</h3>
       <p>Review submitted by Brian</p>
     </Carousel.Caption>
-  </Carousel.Item>
-
-  
-
-  
-</Carousel>
+  </Carousel.Item>  
+</Carousel> */}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
