@@ -12,30 +12,23 @@
 /** NAVIGATION BAR */
 nav {
   overflow: auto;
-  background-color:rgb(46, 4, 199);;
+  background-color: #7851a9;
   position: fixed;
   top: 0;
   width: 100%;
-/* a {
-  color: red;
-  text-decoration: none;
-  padding: 14px;
-  background-color: white;
-        }
-  } */
+  
     }
 
 #link {
   color: silver;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 #link:hover{
   color: black;
-  font-size: 30px;
+  font-size: 25px;
 
 }
-
 
 
 .content {

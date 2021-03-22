@@ -240,11 +240,16 @@ const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
 const App = () => {
   return (
-   <div className="AppWrapper"> 
+    <div className="text-center">
+      <section>
+      <h1 className="title">Ready To Pay?</h1>
+      </section>
+      <div className="AppWrapper">
       <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
-        <CheckoutForm />
+      <CheckoutForm />
       </Elements>
-        </div>
+      </div>
+    </div>
   );
 };
 

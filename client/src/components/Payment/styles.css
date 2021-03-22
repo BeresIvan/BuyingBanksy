@@ -1,8 +1,9 @@
-  .AppWrapper {
-    width: 500px;
-    height: 400px;
-    position: center;
-  }
+.AppWrapper {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
   
   @keyframes fade {
     from {
