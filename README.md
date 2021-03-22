@@ -33,7 +33,7 @@ npm run test
 [Adrian Pinon](https://github.com/adrianpinon) <br/>
 [Jackie Galindo](https://github.com/buildgal) <br/>
 [Brian Vargas](https://github.com/bvargas17) <br/>
-[Idil](https://github.com/shaie001) <br/>
+[Idil Shaie](https://github.com/shaie001) <br/>
 [Suhir Saleh](https://github.com/suhirsaleh) <br/>
 [Ivan Beres](https://github.com/BeresIvan) <br/>
 
