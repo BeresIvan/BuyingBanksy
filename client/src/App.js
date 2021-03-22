@@ -31,9 +31,6 @@ function App() {
           <Route exact path="/Signup">
             <Signup />
           </Route>
-          <Route exact path="/reviews">
-            <Reviews />
-          </Route>
           <Route exact path="/cart">
             <Cart />
           </Route>
@@ -41,6 +38,9 @@ function App() {
             <Payment>
               <paymentpage ></paymentpage>
               </Payment>
+          </Route>
+          <Route exact path="/reviews">
+            <Reviews />
           </Route>
         </Wrapper>
         </Switch>
