@@ -10,48 +10,42 @@ import Cart from "./pages/Cart.js";
 import Signup from "./pages/Signup.js";
 import Gallery from "./pages/Gallery.js";
 import Payment from "./pages/Payment";
-import paymentpage from "./components/Payment/index.js";
-import axios from "axios";
-import { AuthContextProvider } from "./context/AuthContext";
-
-axios.defaults.withCredentials = true;
+import paymentpage from "./components/Payment/index.js"
 
 function App() {
   return (
-    <AuthContextProvider>
-      <Router>
-        <div>
-          <Toolbar />
-          <Switch>
-            <Wrapper>
-              <Route exact path={["/", "/home"]}>
-                <Home />
-              </Route>
-              <Route exact path="/gallery">
-                <Gallery />
-              </Route>
-              <Route exact path="/login">
-                <Login />
-              </Route>
-              <Route exact path="/Signup">
-                <Signup />
-              </Route>
-              <Route exact path="/reviews">
-                <Reviews />
-              </Route>
-              <Route exact path="/cart">
-                <Cart />
-              </Route>
-              <Route exact path="/payment">
-                <Payment>
-                  <paymentpage></paymentpage>
-                </Payment>
-              </Route>
-            </Wrapper>
-          </Switch>
-        </div>
-      </Router>
-    </AuthContextProvider>
+    <Router>
+      <div>
+        <Toolbar />
+        <Switch>
+        <Wrapper>
+          <Route exact path={["/", "/home"]}>
+            <Home />
+          </Route>
+          <Route exact path="/gallery">
+            <Gallery />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/Signup">
+            <Signup />
+          </Route>
+          <Route exact path="/reviews">
+            <Reviews />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+          <Route exact path="/payment">
+            <Payment>
+              <paymentpage ></paymentpage>
+              </Payment>
+          </Route>
+        </Wrapper>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -1,67 +1,46 @@
-import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.scss";
-import { useHistory } from "react-router-dom";
-import AuthContext from "../context/AuthContext";
 
 
 
-function Signup() {
+export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordVerify, setPasswordVerify] = useState("");
 
-  const { getLoggedIn } = useContext(AuthContext);
-  const history = useHistory();
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
+  }
 
-  async function signup(e) {
-    e.preventDefault();
-
-    try {
-      const signupData = {
-        email,
-        password,
-        passwordVerify,
-      };
-
-      await axios.post("http://localhost:3000/", signupData);
-      // await axios.post(
-        // "https://buying-banksy.herokuapp.com/Signup",
-        // signupData
-      // );
-      await getLoggedIn();
-      history.push("/");
-    } catch (err) {
-      console.error(err);
-    }
+  function handleSubmit(event) {
+    event.preventDefault();
   }
 
   return (
-    <div>
-      <form onSubmit={signup}>
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-        <input
-          type="password"
-          placeholder="Verify your password"
-          onChange={(e) => setPasswordVerify(e.target.value)}
-          value={passwordVerify}
-        />
-        <Button type="submit" >Signup</Button>
-      </form>
+    <div className="Signup">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Button block size="lg" type="submit" disabled={!validateForm()}>
+          Signup
+        </Button>
+      </Form>
     </div>
   );
 }
-
-export default Signup;
