@@ -1,15 +1,18 @@
 * {
   box-sizing: border-box;
   font-family: sans-serif;
+  
 }
 
 html, body, #root {
   padding: 0;
   margin: 0;
   height: 100%;
+  background-color: #ECEFF1;
 }
 
 ::placeholder {
   color: red;
   opacity: 1; /* Firefox */
 }
+
