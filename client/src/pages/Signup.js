@@ -25,11 +25,11 @@ function Signup() {
         passwordVerify,
       };
 
-      //await axios.post("http://localhost:3000/", signupData);
-       await axios.post(
-         "https://buying-banksy.herokuapp.com/Signup",
-         signupData
-       );
+      await axios.post("http://localhost:3000/", signupData);
+      // await axios.post(
+        // "https://buying-banksy.herokuapp.com/Signup",
+        // signupData
+      // );
       await getLoggedIn();
       history.push("/");
     } catch (err) {
