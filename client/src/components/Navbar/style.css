@@ -2,6 +2,8 @@
 
 /* Fira Sans */
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
 
 #container {
   width: 50%;
@@ -12,7 +14,7 @@
 /** NAVIGATION BAR */
 nav {
   overflow: auto;
-  background-color: #7851a9;
+  background-color: rgb(53, 8, 218);
   position: fixed;
   top: 0;
   width: 100%;
@@ -27,12 +29,14 @@ nav {
 #link:hover{
   color: black;
   font-size: 25px;
+  font-family: 'Syne Mono', monospace;
 
 }
 
 
 .content {
   text-align: center;
+
 }
 
 /* .logo{
