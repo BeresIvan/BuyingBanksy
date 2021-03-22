@@ -12,7 +12,7 @@
 /** NAVIGATION BAR */
 nav {
   overflow: auto;
-  background-color: #7851a9;
+  background-color:rgb(46, 4, 199);;
   position: fixed;
   top: 0;
   width: 100%;
@@ -27,6 +27,13 @@ nav {
 
 #link {
   color: silver;
+  font-size: 30px;
+}
+
+#link:hover{
+  color: black;
+  font-size: 30px;
+
 }
 
 
@@ -34,3 +41,7 @@ nav {
 .content {
   text-align: center;
 }
+
+/* .logo{
+  height: 150px;
+} */

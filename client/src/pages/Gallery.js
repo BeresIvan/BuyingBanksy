@@ -2,12 +2,115 @@ import React, { Component } from "react";
 import ProductCard from "../components/ProductCard";
 import Products from "../products.json";
 import "./Gallery.css";
+import Carousel from 'react-bootstrap/Carousel';
 
 class Gallery extends Component {
   render() {
     return (
       <div class="galleryBody">
+        
         <div>
+        <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[3].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[11].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[8].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[1].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[2].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[4].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[6].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[7].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-90"
+      src={Products[10].image}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+
+
+
+  </Carousel> 
+
+
+
+
           <ProductCard
             image={Products[0].image}
             artist={Products[0].artist}

@@ -160,7 +160,7 @@ const CheckoutForm = () => {
   };
 
   return paymentMethod ? (
-    <div className="Result">
+    <div className="Result">    
       <div className="ResultTitle" role="alert">
         Payment successful
       </div>
@@ -240,11 +240,11 @@ const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
 const App = () => {
   return (
-    <div className="AppWrapper">
+   <div className="AppWrapper"> 
       <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
         <CheckoutForm />
       </Elements>
-    </div>
+        </div>
   );
 };
 

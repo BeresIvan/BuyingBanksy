@@ -9,3 +9,8 @@
     align-content: flex-start;
     overflow: auto;
 } */
+
+.d-block{
+height:400px;
+margin-left: 25%;
+}
