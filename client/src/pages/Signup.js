@@ -38,7 +38,7 @@ export default function Signup() {
           />
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Signup
+        <a href= "/Login"> Signup </a>
         </Button>
       </Form>
     </div>

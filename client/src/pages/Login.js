@@ -36,7 +36,7 @@ export default function Login() {
           />
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
+          <a href= "/Gallery"> Login </a>
         </Button>
       </Form>
     </div>
