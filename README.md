@@ -47,7 +47,8 @@ In order to ensure quality of the BuyingBanksy application we created an end to 
 Future developement would be to add the test to the this repo and include test that navgiate the content of each page. 
 
 To run the test collection clone the following repo (https://github.com/buildgal/banksy-test) 
-Then run the command below
+Then run the commands below
 ```
+$npm i 
 $npm run test-local 
 ```
