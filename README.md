@@ -43,11 +43,11 @@ Heroku: (https://buying-banksy.herokuapp.com/)
 
 
 # Test
-In order to ensure quality of the BuyingBanksy application we created an end to end testing suite using WebDriverIO. This allows us to create a suite of behavioral driven test. The following test checks if a user is able to naviagte to each page of the applciation. 
-Future developement would be to add the test to the this repo and add test to navgiate the content of each webpage. 
+In order to ensure quality of the BuyingBanksy application we created an end to end testing suite using WebDriverIO &Cucumber. This allows us to create a suite of behavioral driven test. The following test checks if a user is able to naviagte to each page of the application. 
+Future developement would be to add the test to the this repo and include test that navgiate the content of each page. 
 
 To run the test collection clone the following repo (https://github.com/buildgal/banksy-test) 
-Then un the command below
+Then run the command below
 ```
 $npm run test-local 
 ```
