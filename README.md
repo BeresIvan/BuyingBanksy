@@ -5,7 +5,7 @@ Brining art to the masses. Our application will allow you to shop for beautiful 
 # User Story 
 As a user I would like to browse for artwork, add the pieces I want to my cart, pay for the artwork I want, and leave a review about my experience. 
 
-![offline] https://github.com/BeresIvan/BuyingBanksy/blob/cccd20637f55599274b7d5ffa0f9d08a988632c8/client/public/home.png
+![offline] (https://github.com/BeresIvan/BuyingBanksy/blob/cccd20637f55599274b7d5ffa0f9d08a988632c8/client/public/home.png)
 
 # Installation 
 
