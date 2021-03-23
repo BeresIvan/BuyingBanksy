@@ -85,7 +85,7 @@ import { List } from "../components/List";
           name= "user"
           value={formObject.user}
           class="form-control" 
-          placeholder="username optional"
+          placeholder="username"
           rows="1">
           </textarea>
         </div>
